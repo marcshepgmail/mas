@@ -47,17 +47,16 @@ while(my @row = $sth->fetchrow_array()) {
 	if ($postid ne "")
 	{
 	++$postid;	
-	print "Incremented postid is :" . $postid;
+	#print "Incremented postid is :" . $postid;
 	}else{
 	$postid=1000001;
 	} 
       
 }
-print "last postid : " . $postid . "\n";
+print "Operation Completed, blog post " . $postid  . " recorded". "<br>";
 
 my $sth = $dbh->prepare('INSERT INTO posts VALUES (?, ?, ?)');
 $sth->execute($postid, $title, $body);
 
 $dbh->disconnect();
 
-#print "Records created successfully\n";
