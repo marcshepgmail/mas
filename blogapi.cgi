@@ -2,6 +2,8 @@
 print "Content-Type: text/html\n\n";
 use strict;
 use warnings;
+use CGI;
+use CGI::Carp qw(fatalsToBrowser);
 use DBI;
 use JSON;
 
