@@ -17,14 +17,8 @@ my $postid;
 my $filename = 'blogin.json';
 my $json = slurp $filename;
 $text = decode_json($json);
-#print "title = " . $text->{'post'}{'title'} . "\n";
-#print "body = " . $text->{'post'}{'body'} . "\n";
 $body = $text->{'post'}{'body'};
 $title = $text->{'post'}{'title'};
-
-#print "Body is : " . $body . "\n";
-#print "Title is : " . $title . "\n";
-
 
 
 my $driver   = "SQLite"; 

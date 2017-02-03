@@ -1,9 +1,10 @@
 #!/usr/bin/perl
-print "Content-Type: text/html\n\n";
+print header('application/json');
 use strict;
 use warnings;
 use CGI;
 use CGI::Carp qw(fatalsToBrowser);
+use CGI qw(:standard);
 use DBI;
 use JSON;
 
@@ -27,8 +28,7 @@ if($rv < 0){
 my $ref;
 while($ref = $sth->fetchrow_hashref) {
 	my $json = encode_json \%$ref;	
-	print $json;
-	print "<br>";
-
+	print "$json\n";
 }
+
 $dbh->disconnect();
