@@ -7,6 +7,7 @@ The setup api also configures apache2 for cgi and the directory /opt/mas
 Once that is setup it chowns the directory so that it can be read by apache to run the files.
 
 The url that you will be using for the GET is blogapi/blogapi.cgi
+
 The url for the POST is blogapi/bloginput.cgi
 
 At this time the post takes a json file from the directory and puts it into the DB.
